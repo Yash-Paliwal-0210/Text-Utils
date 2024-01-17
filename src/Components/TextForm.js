@@ -6,6 +6,10 @@ export default function TextForm() {
   const [text1, setText1] = useState("");
   const [closeModal, setcloseModal] = useState(true);
   const [customStyle, setCustomStyle] = useState({});
+
+ 
+
+
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
@@ -94,17 +98,17 @@ export default function TextForm() {
         <div
           id="popup-modal"
           tabindex="-1"
-          class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+          className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
         >
-          <div class="relative p-4 w-full max-w-md max-h-full absolute left-1/2 translate-x-[-50%]">
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <div className="relative p-4 w-full max-w-md max-h-full absolute left-1/2 translate-x-[-50%]">
+            <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
               <button
                 type="button"
-                class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                 data-modal-hide="popup-modal"
               >
                 <svg
-                  class="w-3 h-3"
+                  className="w-3 h-3"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -118,11 +122,11 @@ export default function TextForm() {
                     d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                   />
                 </svg>
-                <span class="sr-only">Close modal</span>
+                <span className="sr-only">Close modal</span>
               </button>
-              <div class="p-4 md:p-5 text-center">
+              <div className="p-4 md:p-5 text-center">
                 <svg
-                  class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200"
+                  className="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -136,7 +140,7 @@ export default function TextForm() {
                     d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                   />
                 </svg>
-                <h3 class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                <h3 className="text-lg font-normal text-gray-500 dark:text-gray-400">
                   Copied To Clipboard
                 </h3>
               </div>
@@ -144,8 +148,8 @@ export default function TextForm() {
           </div>
         </div>
       </div>
-      <div className="last bg-gray-100" id="started">
-        <div className="lower bg-gray-100-200  py-10 w-full p-5 justify-around flex  flex-wrap sm:gap-7 min-[260px]:gap-7">
+      <div className="last bg-gray-0" id="started">
+        <div className="lower bg-gray-100-200  py-10 w-full p-5 justify-around flex  flex-wrap sm:gap-7 min-[260px]:gap-7 ">
           <div className="txt1">
             <textarea
               name=""
@@ -153,7 +157,7 @@ export default function TextForm() {
               cols="70"
               rows="13"
               placeholder="Input text here.."
-              className="text-black rounded-lg w-full p-2"
+              className="text-black rounded-lg w-full p-2 bg-gray-50"
               value={text}
               onChange={handleOnChange}
               data-aos="zoom-in-up"
@@ -168,7 +172,7 @@ export default function TextForm() {
               cols="70"
               rows="13"
               placeholder="Output text here.."
-              className=" text-black rounded-lg w-full p-2"
+              className=" text-black rounded-lg w-full p-2 bg-gray-50"
               value={text1}
               style={customStyle}
               onChange={handleOnChange1}

@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React,{useState} from 'react'
+// import DarkMode from './DarkMode'
 export default function Footer() {
+
+
   return (
     
-<footer className="bg-gray-200">
+<footer className="bg-gray-50">
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 min-[270px]:text-center max-[680px]:text-center">
       <hr className="my-1 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
