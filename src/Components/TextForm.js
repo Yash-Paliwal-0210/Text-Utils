@@ -190,6 +190,12 @@ export default function TextForm() {
           >
             Make Input As Output
           </button>
+        <button
+            className="btn btn-danger mx-3 my-3"
+            onClick={copyText}
+          >
+            Copy To Clipboard
+          </button>
           
           <button className="btn btn-primary mx-3 my-3" onClick={handleUpClick}>
             Uppercase
