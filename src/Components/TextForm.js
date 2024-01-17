@@ -47,7 +47,7 @@ export default function TextForm() {
     setCustomStyle({});
   };
   const bold = () => {
-    setText(text1);
+    setText1(text);
     setCustomStyle({ fontWeight: "bold" });
   };
   const talic = () => {
@@ -55,7 +55,7 @@ export default function TextForm() {
     setCustomStyle({ fontStyle: "italic" });
   };
   const sentenceCase = () => {
-    let array = text1.split(".");
+    let array = text.split(".");
     array = array.map(
       (element) => element.charAt(0).toUpperCase() + element.slice(1)
     );
@@ -153,7 +153,7 @@ export default function TextForm() {
               cols="70"
               rows="13"
               placeholder="Input text here.."
-              className="bg-yellow-100 text-black rounded-lg w-full"
+              className="bg-yellow-100 text-black rounded-lg w-full p-2"
               value={text}
               onChange={handleOnChange}
               data-aos="zoom-in-up"
@@ -168,7 +168,7 @@ export default function TextForm() {
               cols="70"
               rows="13"
               placeholder="Output text here.."
-              className="bg-yellow-100 text-black rounded-lg w-full"
+              className="bg-yellow-100 text-black rounded-lg w-full p-2"
               value={text1}
               style={customStyle}
               onChange={handleOnChange1}

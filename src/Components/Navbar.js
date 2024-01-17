@@ -41,7 +41,6 @@ export default function Navbar(props) {
           <div className="left_side lg:w-6/12 p-3 md:w-full md:text-center lg:text-left sm:text-center sm:w-full min-[270px]:w-full min-[270px]:text-xl sm:text-2xl border-dashed">
             <h1
               className="text-5xl font-bold pb-10 lg:text-7xl md:text-6xl md:text-4xl sm:text-5xl "
-              
             >
               <span className="text-pink-600">Are you ready for </span>
               <br /> <span className="text-green-700">Best Online Tool?</span>
