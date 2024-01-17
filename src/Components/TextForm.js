@@ -144,8 +144,8 @@ export default function TextForm() {
           </div>
         </div>
       </div>
-      <div className="last bg-yellow-200" id="started">
-        <div className="lower bg-yellow-200  py-10 w-full p-5 justify-around flex  flex-wrap sm:gap-7 min-[260px]:gap-7">
+      <div className="last bg-gray-100" id="started">
+        <div className="lower bg-gray-100-200  py-10 w-full p-5 justify-around flex  flex-wrap sm:gap-7 min-[260px]:gap-7">
           <div className="txt1">
             <textarea
               name=""
@@ -153,7 +153,7 @@ export default function TextForm() {
               cols="70"
               rows="13"
               placeholder="Input text here.."
-              className="bg-yellow-100 text-black rounded-lg w-full p-2"
+              className="text-black rounded-lg w-full p-2"
               value={text}
               onChange={handleOnChange}
               data-aos="zoom-in-up"
@@ -168,7 +168,7 @@ export default function TextForm() {
               cols="70"
               rows="13"
               placeholder="Output text here.."
-              className="bg-yellow-100 text-black rounded-lg w-full p-2"
+              className=" text-black rounded-lg w-full p-2"
               value={text1}
               style={customStyle}
               onChange={handleOnChange1}
@@ -178,56 +178,53 @@ export default function TextForm() {
           </div>
         </div>
         <div className=" py-8 flex flex-wrap justify-around w-full h-auto min-[270px]:w-450px sm:w-full lg:w-54/100 lg:px-28  ">
-          <button className="btn btn-primary mx-3 my-3" onClick={handleUpClick}>
-            Uppercase
-          </button>
-          <button className="btn btn-danger mx-3 my-3">
-            Number of Alphabets : {alphaCount()} | Number of Words :{" "}
-            {wordCount()}{" "}
-          </button>
-          <button
-            className="btn btn-primary mx-3 my-3"
-            onClick={removeExtraSpaces}
-          >
-            Remove Extra Spaces
-          </button>
-          <button
-            className="btn btn-primary mx-3 my-3"
+        <button
+            className="btn btn-danger mx-3 my-3"
             onClick={() => {
               setText(text1);
             }}
           >
             Make Input As Output
           </button>
-          <button className="btn btn-danger mx-3 my-3" onClick={handleLowClick}>
+          
+          <button className="btn btn-primary mx-3 my-3" onClick={handleUpClick}>
+            Uppercase
+          </button>
+          
+          <button
+            className="btn btn-primary mx-3 my-3"
+            onClick={removeExtraSpaces}
+          >
+            Remove Extra Spaces
+          </button>
+          
+          <button className="btn btn-primary mx-3 my-3" onClick={handleLowClick}>
             Lowercase
           </button>
           <button className="btn btn-primary mx-3 my-3" onClick={removeSpaces}>
             Remove Spaces
           </button>
-          <button className="btn btn-dark mx-3 my-3" onClick={bold}>
+          <button className="btn btn-primary mx-3 my-3" onClick={bold}>
             Bold
           </button>
-          <button className="btn btn-success mx-3 my-3" onClick={underline}>
+          <button className="btn btn-primary mx-3 my-3" onClick={underline}>
             Underline
           </button>
-          <button className="btn btn-dark mx-3 my-3" onClick={removePunc}>
+          <button className="btn btn-primary mx-3 my-3" onClick={removePunc}>
             Remove Punctuation
           </button>
-          <button className="btn btn-success mx-3 my-3" onClick={copyText}>
-            Copy Text To Clipboard
-          </button>
-          <button className="btn btn-dark mx-3 my-3" onClick={talic}>
+          
+          <button className="btn btn-primary mx-3 my-3" onClick={talic}>
             Italic
           </button>
-          <button className="btn btn-success mx-3 my-3" onClick={sentenceCase}>
+          <button className="btn btn-primary mx-3 my-3" onClick={sentenceCase}>
             Sentence Case
           </button>
-          <button className="btn btn-dark mx-3 my-3" onClick={Strikethrough}>
+          <button className="btn btn-primary mx-3 my-3" onClick={Strikethrough}>
             Strikethrough
           </button>
           <button
-            className="btn btn-warning mx-3 my-3"
+            className="btn btn-primary mx-3 my-3"
             onClick={() => {
               setText1(text.replace(/[[\]{}()]/g, ""));
             }}
@@ -243,15 +240,19 @@ export default function TextForm() {
             Emoji
           </button>
           <button
-            className="btn btn-warning mx-3 my-3"
+            className="btn btn-primary mx-3 my-3"
             onClick={() => {
               setText("");
             }}
           >
             Clear Text
           </button>
-          <button className="btn btn-primary mx-3 my-3">
+          <button className="btn btn-dark mx-3 my-3">
             Can Be Read in {0.008 * text.split(" ").length} minutes
+          </button>
+          <button className="btn btn-dark mx-3 my-3">
+            Number of Alphabets : {alphaCount()} | Number of Words :{" "}
+            {wordCount()}{" "}
           </button>
         </div>
       </div>
