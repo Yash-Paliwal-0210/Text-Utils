@@ -47,18 +47,18 @@ export default function Navbar(props) {
 </div>
 {hamburg && (
         <div className="xl:hidden w-full lg:hidden sm:block md:hidden min-[240px]:block max-[640px]:block" data-dropdown-toggle="dropdownToggle" id="navbar-hamburger">
-          <ul className="flex flex-col font-medium mt-0 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+          <ul className="flex flex-col font-medium mt-0 rounded-lg bg-gray-50">
             <li>
-              <a href="#" className="block py-2 px-3 text-white bg-blue-700 rounded dark:bg-blue-600 min-[270px]:text-center max-[640px]:text-center" aria-current="page">Home</a>
+              <a href="#" className="block py-2 px-3 text-white bg-blue-700 rounded  min-[270px]:text-center max-[640px]:text-center" aria-current="page">Home</a>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white min-[270px]:text-center max-[640px]:text-center">Services</a>
+              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  min-[270px]:text-center max-[640px]:text-center">Services</a>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white min-[270px]:text-center max-[640px]:text-center">Pricing</a>
+              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100    min-[270px]:text-center max-[640px]:text-center">Pricing</a>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white min-[270px]:text-center max-[640px]:text-center">Contact</a>
+              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  min-[270px]:text-center max-[640px]:text-center">Contact</a>
             </li>
           </ul>
         </div>
