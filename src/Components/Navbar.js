@@ -35,7 +35,7 @@ export default function Navbar(props) {
     <div className="flex flex-wrap gap-2">
     <div onClick={props.toggleMode} >
       <img src={sunny} className="w-8 mt-1 min-[270px]:block max-[640px]:block" onClick={props.toggleMode} alt="" /></div>
-      <button data-collapse-toggle="navbar-hamburger"  type="button" className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 min-[270px]:block max-[640px]:block md:hidden" aria-controls="navbar-hamburger" aria-expanded="false" onClick={toggleHamburger}>
+      <button data-collapse-toggle="navbar-hamburger"  type="button" className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 min-[270px]:block max-[640px]:block md:hidden" aria-controls="navbar-hamburger" aria-expanded="false" onClick={toggleHamburger}>
       <span class="sr-only">Open main menu</span>
       <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
