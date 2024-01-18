@@ -51,8 +51,18 @@ export default function TextForm() {
     setCustomStyle({});
   };
   const bold = () => {
+    if(boldvar === false)
+    {
+      setBoldVar(true);
     setText1(text);
     setCustomStyle({ fontWeight: "bold" });
+    }
+    else{
+      setText1(text);
+    setCustomStyle({ fontWeight: "normal" });
+      setBoldVar(false);
+
+    }
   };
   const talic = () => {
     setText1(text);
@@ -91,6 +101,8 @@ export default function TextForm() {
         setcloseModal(true);
     }, 2000);
   };
+
+  const [boldvar,setBoldVar]= useState(false);
 
   return (
     <>
