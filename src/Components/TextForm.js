@@ -1,7 +1,7 @@
 import { configure } from "@testing-library/react";
 import React, { useState } from "react";
-
-export default function TextForm() {
+import check from "../assets/check.png"
+export default function TextForm(props) {
   const [text, setText] = useState("");
   const [text1, setText1] = useState("");
   const [closeModal, setcloseModal] = useState(true);
@@ -231,22 +231,12 @@ export default function TextForm() {
                 </svg>
                 <span className="sr-only">Close modal</span>
               </button>
-              <div className="p-4 md:p-5 text-center">
-                <svg
-                  className="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    stroke="green"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                  />
-                </svg>
+              <div className="p-4 md:p-5 text-center justify-center">
+                {
+                  <div className="flex justify-center mb-2">
+                <img src={check} alt="" className="w-10 h-10r"/>
+                </div>
+                }
                 <h3 className="text-lg font-normal text-gray-500 dark:text-gray-400">
                   Copied To Clipboard
                 </h3>
@@ -255,8 +245,8 @@ export default function TextForm() {
           </div>
         </div>
       </div>
-      <div className="last bg-gray-0" id="started">
-        <div className="lower bg-gray-100-200  py-10 w-full p-5 justify-around flex  flex-wrap sm:gap-7 min-[260px]:gap-7 ">
+      <div className={`last bg-gray-0 `} id="started">
+        <div className={`lower bg-gray-100-200  py-10 w-full p-5 justify-around flex  flex-wrap sm:gap-7 min-[260px]:gap-7 bg-${props.mode}`}>
           <div className="txt1">
             <textarea
               name=""
@@ -264,31 +254,33 @@ export default function TextForm() {
               cols="70"
               rows="13"
               placeholder="Input text here.."
-              className="text-black rounded-lg w-full p-2 bg-gray-50"
+              className={`text-black rounded-lg w-full p-2 bg-gray-50 `}
               value={text}
+              style={{backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a'}}
               onChange={handleOnChange}
               data-aos="zoom-in-up"
      data-aos-duration="2000"
 
             ></textarea>
           </div>
-          <div className="txt2">
+          <div className={`txt2 `}>
             <textarea
               name=""
               id=""
               cols="70"
               rows="13"
               placeholder="Output text here.."
-              className=" text-black rounded-lg w-full p-2 bg-gray-50"
+              className={`text-black rounded-lg w-full p-2 bg-gray-50`}
               value={text1}
-              style={customStyle}
+
+              style={{backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a'}}
               onChange={handleOnChange1}
               data-aos="zoom-in-up"
      data-aos-duration="2000"
             ></textarea>
           </div>
         </div>
-        <div className=" py-8 flex flex-wrap justify-around w-full h-auto min-[270px]:w-450px sm:w-full lg:w-54/100 lg:px-28  ">
+        <div className= {`py-8 flex bg-${props.mode} flex-wrap justify-around w-full h-auto min-[270px]:w-450px sm:w-full lg:w-54/100 lg:px-28  `}>
         <button
             className="btn btn-danger mx-3 my-3"
             onClick={() => {
@@ -394,10 +386,10 @@ export default function TextForm() {
           >
             Clear Text
           </button>
-          <button className="btn btn-dark mx-3 my-3">
+          <button className="btn btn-success mx-3 my-3">
             Can Be Read in {0.008 * text.split(" ").length} minutes
           </button>
-          <button className="btn btn-dark mx-3 my-3">
+          <button className="btn btn-success mx-3 my-3">
             Number of Alphabets : {alphaCount()} | Number of Words :{" "}
             {wordCount()}{" "}
           </button>

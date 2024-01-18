@@ -1,15 +1,15 @@
 import React,{useState} from 'react'
 // import DarkMode from './DarkMode'
-export default function Footer() {
+export default function Footer(props) {
 
 
   return (
     
-<footer className="bg-gray-50">
-    <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 min-[270px]:text-center max-[680px]:text-center">
+<footer className={`bg-gray-50 bg-${props.mode} text-${props.mode1}`} >
+    <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 min-[270px]:text-center max-[680px]:text-center" style={{backgroundColor:props.mode === 'light'?'dark':'light'}}>
       <hr className="my-1 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-lg text-black sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" className="hover:underline">Yash-TextUtils</a>. All Rights Reserved.
+          <span className={`text-lg  sm:text-center dark:text-gray-400 text-${props.mode1}`}>© 2023 <a href="https://flowbite.com/" className="hover:underline">Yash-TextUtils</a>. All Rights Reserved.
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0 min-[270px]:justify-center max-[680px]:justify-center">
               <a href="#" className="text-black-500 hover:text-pink-900 dark:hover:text-white ">
