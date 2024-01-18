@@ -17,16 +17,46 @@ export default function TextForm() {
     setText1(event.target.value);
   };
   const handleUpClick = () => {
-    const newtext = text.toUpperCase();
-    setText1(newtext);
+    if(toggle === false)
+    {
+      setToggleVar(true);
+      const newtext = text.toUpperCase();
+      setText1(newtext);
+    }
+    else{
+      setText1(text);
+      setToggleVar(false);
+
+    }
+    
   };
   const handleLowClick = () => {
-    const newtext = text.toLowerCase();
-    setText1(newtext);
+    if(toggle === false)
+    {
+      setToggleVar(true);
+      const newtext = text.toLowerCase();
+      setText1(newtext);
+    }
+    else{
+      setText1(text);
+      setToggleVar(false);
+
+    }
+    
   };
   const removeSpaces = () => {
-    const newtext = text.replaceAll(" ", "");
-    setText1(newtext);
+    if(toggle === false)
+    {
+      setToggleVar(true);
+      const newtext = text.replaceAll(" ", "");
+      setText1(newtext);
+    }
+    else{
+      setText1(text);
+      setToggleVar(false);
+
+    }
+    
   };
 
   const alphaCount = () => {
@@ -47,48 +77,113 @@ export default function TextForm() {
     }).length;
   };
   const removeExtraSpaces = () => {
-    setText1(text.replace(/\s+/g, " "));
-    setCustomStyle({});
+    if(toggle === false)
+    {
+      setToggleVar(true);
+      setText1(text.replace(/\s+/g, " "));
+      setCustomStyle({});
+    }
+    else{
+      setText1(text);
+    // setCustomStyle({ fontWeight: "normal" });
+      setToggleVar(false);
+
+    }
+    
   };
   const bold = () => {
-    if(boldvar === false)
+    if(toggle === false)
     {
-      setBoldVar(true);
+      setToggleVar(true);
     setText1(text);
     setCustomStyle({ fontWeight: "bold" });
     }
     else{
       setText1(text);
     setCustomStyle({ fontWeight: "normal" });
-      setBoldVar(false);
+      setToggleVar(false);
 
     }
   };
   const talic = () => {
-    setText1(text);
-    setCustomStyle({ fontStyle: "italic" });
+    if(toggle === false)
+    {
+      setToggleVar(true);
+      setText1(text);
+      setCustomStyle({ fontStyle: "italic" });
+    }
+    else{
+      setText1(text);
+    setCustomStyle({ fontWeight: "normal" });
+      setToggleVar(false);
+
+    }
+    
   };
   const sentenceCase = () => {
-    let array = text.split(".");
-    array = array.map(
-      (element) => element.charAt(0).toUpperCase() + element.slice(1)
-    );
-    setText1(array.join("."));
-    setCustomStyle({});
+    if(toggle === false)
+    {
+      setToggleVar(true);
+      let array = text.split(".");
+      array = array.map(
+        (element) => element.charAt(0).toUpperCase() + element.slice(1)
+      );
+      setText1(array.join("."));
+      setCustomStyle({});
+    }
+    else{
+      setText1(text);
+      setToggleVar(false);
+
+    }
+    
   };
 
   const removePunc = () => {
-    setText1(text.replace(/[.,\/#!$%^@&*;:{}=\-_`~()?"'<>]/g, ""));
+    if(toggle === false)
+    {
+      setToggleVar(true);
+      setText1(text.replace(/[.,\/#!$%^@&*;:{}=\-_`~()?"'<>]/g, ""));
+    }
+    else{
+      setText1(text);
+    
+      setToggleVar(false);
+
+    }
+    
   };
 
   const underline = () => {
-    setText1(text);
-    setCustomStyle({ textDecoration: "underline" });
+    if(toggle === false)
+    {
+      setToggleVar(true);
+      setText1(text);
+      setCustomStyle({ textDecoration: "underline" });
+    }
+    else{
+      setText1(text);
+      setCustomStyle({ textDecoration: "none" });
+      setToggleVar(false);
+
+    }
+    
   };
 
   const Strikethrough = () => {
-    setText1(text);
-    setCustomStyle({ textDecoration: "line-through" });
+    if(toggle === false)
+    {
+      setToggleVar(true);
+      setText1(text);
+      setCustomStyle({ textDecoration: "line-through" });
+    }
+    else{
+      setText1(text);
+      setCustomStyle({ textDecoration: "none" });
+      setToggleVar(false);
+
+    }
+    
   };
   const copyText = async() => {
     try {
@@ -102,7 +197,7 @@ export default function TextForm() {
     }, 2000);
   };
 
-  const [boldvar,setBoldVar]= useState(false);
+  const [toggle,setToggleVar]= useState(false);
 
   return (
     <>
@@ -248,7 +343,17 @@ export default function TextForm() {
           <button
             className="btn btn-primary mx-3 my-3"
             onClick={() => {
-              setText1(text.replace(/[[\]{}()]/g, ""));
+              if(toggle === false)
+    {
+      setToggleVar(true);
+      setText1(text.replace(/[[\]{}()]/g, ""));
+    }
+    else{
+      setText1(text);
+      setToggleVar(false);
+
+    }
+              
             }}
           >
             Remove Brackets
@@ -256,7 +361,17 @@ export default function TextForm() {
           <button
             className="btn btn-primary mx-3 my-3"
             onClick={() => {
-              setText1(text.replace(/[ ]/g, "😍"));
+              if(toggle === false)
+              {
+                setToggleVar(true);
+                setText1(text.replace(/[ ]/g, "😍"));
+              }
+              else{
+                setText1(text);
+                setToggleVar(false);
+          
+              }
+              
             }}
           >
             Emoji
@@ -264,7 +379,17 @@ export default function TextForm() {
           <button
             className="btn btn-primary mx-3 my-3"
             onClick={() => {
-              setText("");
+              if(toggle === false)
+              {
+                setToggleVar(true);
+                setText("");
+              }
+              else{
+                setText(text1);
+                setToggleVar(false);
+          
+              }
+              
             }}
           >
             Clear Text
