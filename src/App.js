@@ -10,6 +10,9 @@ function App() {
 
   const [mode,setMode]=useState('light');
   const [mode1,setMode1]=useState('dark');
+  const [mode3,setMode3]=useState('light');
+  const [mode2,setMode2]=useState('dark');
+  // const [customStyle, setCustomStyle] = useState({});
 
   // const [mode2,setMode2]=useState('dark');
   
@@ -18,10 +21,16 @@ function App() {
     if(mode === 'light' && mode1==='dark'){
       setMode('dark');
       setMode1('light');
+      setMode3('dark');
+      setMode2('light');
+      
     }
     else{
       setMode('light');  
       setMode1('dark');
+      setMode3('light');
+      setMode2('dark');
+
     }
   }
   
@@ -34,7 +43,7 @@ function App() {
   return (
    <>
    <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} mode1={mode1}/>
-   <TextForm mode={mode} mode1={mode1}/>
+   <TextForm mode={mode} mode1={mode1} mode3={mode3} mode2={mode2}/>
    <Footer mode={mode} mode1={mode1}/>
    </>
   );

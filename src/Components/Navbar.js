@@ -47,7 +47,7 @@ export default function Navbar(props) {
 </div>
 {hamburg && (
         <div className={`ham xl:hidden w-full lg:hidden sm:block md:hidden min-[240px]:block max-[640px]:block" data-dropdown-toggle="dropdownToggle" id="navbar-hamburger`}>
-          <ul className={`flex bg-${props.mode} text-${props.mode1} flex-col font-medium mt-0 rounded-lg bg-gray-50`}>
+          <ul className={`flex bg-${props.mode} text-${props.mode1} flex-col font-medium mt-0  bg-gray-50`}>
             <li>
               <a href="#" className={`block text-${props.mode1} py-2 px-3 text-white bg-blue-700 rounded mb-0.5 mx-2 min-[270px]:text-center max-[640px]:text-center`} aria-current="page">Home</a>
             </li>

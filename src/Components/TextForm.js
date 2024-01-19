@@ -2,61 +2,36 @@ import { configure } from "@testing-library/react";
 import React, { useState } from "react";
 import check from "../assets/check.png"
 export default function TextForm(props) {
+
   const [text, setText] = useState("");
   const [text1, setText1] = useState("");
   const [closeModal, setcloseModal] = useState(true);
   const [customStyle, setCustomStyle] = useState({});
 
- 
+  const [toggle,setToggleVar]= useState(false);
 
-
+// setCustomStyle({backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a'});
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
+
   const handleOnChange1 = (event) => {
     setText1(event.target.value);
   };
-  const handleUpClick = () => {
-    if(toggle === false)
-    {
-      setToggleVar(true);
-      const newtext = text.toUpperCase();
-      setText1(newtext);
-    }
-    else{
-      setText1(text);
-      setToggleVar(false);
 
-    }
-    
+  const handleUpClick = () => {
+      const newtext = text.toUpperCase();
+      setText1(newtext);  
   };
+
   const handleLowClick = () => {
-    if(toggle === false)
-    {
-      setToggleVar(true);
       const newtext = text.toLowerCase();
       setText1(newtext);
-    }
-    else{
-      setText1(text);
-      setToggleVar(false);
-
-    }
-    
   };
-  const removeSpaces = () => {
-    if(toggle === false)
-    {
-      setToggleVar(true);
-      const newtext = text.replaceAll(" ", "");
-      setText1(newtext);
-    }
-    else{
-      setText1(text);
-      setToggleVar(false);
 
-    }
-    
+  const removeSpaces = () => {
+      const newtext = text.replaceAll(" ", "");
+      setText1(newtext); 
   };
 
   const alphaCount = () => {
@@ -71,118 +46,63 @@ export default function TextForm(props) {
     }
     return a;
   };
+
   const wordCount = () => {
     return text.split(" ").filter(function (n) {
-      return n != "";
+      return n !== "";
     }).length;
   };
-  const removeExtraSpaces = () => {
-    if(toggle === false)
-    {
-      setToggleVar(true);
-      setText1(text.replace(/\s+/g, " "));
-      setCustomStyle({});
-    }
-    else{
-      setText1(text);
-    // setCustomStyle({ fontWeight: "normal" });
-      setToggleVar(false);
 
-    }
+  const removeExtraSpaces = () => {
+      setText1(text.replace(/\s+/g, " "));
+      // setCustomStyle({backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a'});
+    };
     
-  };
   const bold = () => {
     if(toggle === false)
     {
-      setToggleVar(true);
+    setToggleVar(true);
     setText1(text);
-    setCustomStyle({ fontWeight: "bold" });
+    setCustomStyle({fontWeight:"bold" });
     }
     else{
       setText1(text);
-    setCustomStyle({ fontWeight: "normal" });
+    // setCustomStyle({ backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a',fontWeight: "normal" });
       setToggleVar(false);
+      setCustomStyle({fontWeight:"normal" });
 
     }
   };
   const talic = () => {
-    if(toggle === false)
-    {
-      setToggleVar(true);
       setText1(text);
-      setCustomStyle({ fontStyle: "italic" });
-    }
-    else{
-      setText1(text);
-    setCustomStyle({ fontWeight: "normal" });
-      setToggleVar(false);
-
-    }
-    
-  };
+      setCustomStyle({fontStyle:"italic" });
+      // setCustomStyle({ backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a',fontStyle: "italic" });
+    };
   const sentenceCase = () => {
-    if(toggle === false)
-    {
-      setToggleVar(true);
       let array = text.split(".");
       array = array.map(
         (element) => element.charAt(0).toUpperCase() + element.slice(1)
       );
       setText1(array.join("."));
-      setCustomStyle({});
-    }
-    else{
-      setText1(text);
-      setToggleVar(false);
-
-    }
-    
-  };
+      // setCustomStyle({backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a'});
+    };
 
   const removePunc = () => {
-    if(toggle === false)
-    {
-      setToggleVar(true);
       setText1(text.replace(/[.,\/#!$%^@&*;:{}=\-_`~()?"'<>]/g, ""));
-    }
-    else{
-      setText1(text);
-    
-      setToggleVar(false);
-
-    }
-    
-  };
+    };
 
   const underline = () => {
-    if(toggle === false)
-    {
-      setToggleVar(true);
       setText1(text);
-      setCustomStyle({ textDecoration: "underline" });
-    }
-    else{
-      setText1(text);
-      setCustomStyle({ textDecoration: "none" });
-      setToggleVar(false);
+      setCustomStyle({textDecoration:"underline" });
 
-    }
+      // setCustomStyle({backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a', textDecoration: "underline" });
     
   };
 
   const Strikethrough = () => {
-    if(toggle === false)
-    {
-      setToggleVar(true);
       setText1(text);
-      setCustomStyle({ textDecoration: "line-through" });
-    }
-    else{
-      setText1(text);
-      setCustomStyle({ textDecoration: "none" });
-      setToggleVar(false);
-
-    }
+      setCustomStyle({textDecoration:"line-through" });
+      // setCustomStyle({backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a', textDecoration: "line-through" });
     
   };
   const copyText = async() => {
@@ -197,7 +117,7 @@ export default function TextForm(props) {
     }, 2000);
   };
 
-  const [toggle,setToggleVar]= useState(false);
+  
 
   return (
     <>
@@ -254,12 +174,12 @@ export default function TextForm(props) {
               cols="70"
               rows="13"
               placeholder="Input text here.."
-              className={`text-black rounded-lg w-full p-2 bg-gray-50 `}
+              className={`text-${props.mode2} rounded-lg w-full p-2 border-slate-300 border-1 bg-${props.mode3}`}
               value={text}
-              style={{backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a'}}
+              
               onChange={handleOnChange}
               data-aos="zoom-in-up"
-     data-aos-duration="2000"
+              data-aos-duration="1000"
 
             ></textarea>
           </div>
@@ -270,13 +190,13 @@ export default function TextForm(props) {
               cols="70"
               rows="13"
               placeholder="Output text here.."
-              className={`text-black rounded-lg w-full p-2 bg-gray-50`}
+              className={`text-${props.mode2} rounded-lg w-full p-2 bg-gray-50 border-slate-300 border-1 bg-${props.mode3} `}
               value={text1}
-
-              style={{backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a'}}
+              // style={{backgroundColor:props.mode === 'light'?'#eeeeee':'#27272a'}}
               onChange={handleOnChange1}
+              style={customStyle}
               data-aos="zoom-in-up"
-     data-aos-duration="2000"
+     data-aos-duration="1000"
             ></textarea>
           </div>
         </div>
