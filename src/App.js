@@ -11,7 +11,7 @@ function App() {
   const [mode1, setMode1] = useState('dark');
   const [mode3, setMode3] = useState('light');
   const [mode2, setMode2] = useState('dark');
-  const [imageSrc, setImageSrc] = useState('sunny.png');
+  const [imageSrc, setImageSrc] = useState('moon.png');
   
   const toggleMode = () => {
     if (mode === 'light' && mode1 === 'dark') {
